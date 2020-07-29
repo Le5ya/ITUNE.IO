@@ -5,6 +5,7 @@ export const radioPlayerInit = () => {
   const radioNavigation = document.querySelector('.radio-navigation');
   const radioItem = document.querySelectorAll('.radio-item');
   const radioStop = document.querySelector('.radio-stop');
+  const radioPlayer = document.querySelector('.radio-player');
   const radioVolume = document.querySelector('.radio-volume');
 
   const audio = new Audio();
@@ -54,7 +55,10 @@ export const radioPlayerInit = () => {
   });
 
   radioVolume.addEventListener('input', () => {
-    radioVolume.volume = radioVolume.value / 100;
-  });
+    radioPlayer.volume = radioVolume.value / 100;
+
+});
+radioPlayer.volume = 0.5;
+radioVolume.value = radioPlayer * 100;
 
 };
